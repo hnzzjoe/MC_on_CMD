@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mc-cli"
+version = "0.1.0"
+description = "A professional CLI manager for Minecraft instances, mods, shaders, and saves."
+authors = [{ name = "Your Name", email = "your@email.com" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "typer>=0.12.0",       # CLI 框架
+    "rich>=13.7.0",        # 终端美化、进度条、表格
+    "requests>=2.31.0",    # 处理网络请求（调用 API）
+    "colorama>=0.4.6",     # Windows 终端颜色兼容
+    "pyfiglet>=0.8.0",     # 启动 Logo 的 ASCII 艺术字
+]
+
+[project.scripts]
+mc-cli = "mc_cli.main:app" # 安装后，终端输入 mc-cli 即可运行
