@@ -1,15 +1,33 @@
-﻿# Python
+﻿# ================= Python 基础 =================
 __pycache__/
 *.py[cod]
-*.egg-info/
-dist/
-build/
+*$py.class
+*.so
+.Python
+env/
+venv/
 .venv/
+ENV/
+env.bak/
+venv.bak/
 
-# IDE
+# ================= 构建与打包 =================
+build/
+dist/
+*.egg-info/
+*.spec
+
+# ================= 测试与覆盖率 =================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ================= IDE 和编辑器 =================
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# OS
+# ================= 操作系统 =================
 .DS_Store
 Thumbs.db

@@ -10,6 +10,8 @@ import random
 import sys
 import time
 
+from art import text2art
+from rich.align import Align
 from rich.console import Console
 from rich.progress import (
     BarColumn,
@@ -20,6 +22,7 @@ from rich.progress import (
     TimeRemainingColumn,
     TransferSpeedColumn,
 )
+from rich.rule import Rule
 
 console = Console()
 _animations = True
@@ -54,16 +57,15 @@ def _random_delay() -> None:
 
 
 def print_logo() -> None:
-    """Print the startup logo (ASCII art, gracefully degraded without pyfiglet)."""
-    try:
-        import pyfiglet
-
-        ascii_art = pyfiglet.figlet_format("M  C   o n   C  M  D", font="slant")
-    except Exception:  # pragma: no cover - optional dependency
-        ascii_art = "MC on CMD"
-    console.print(f"[bold cyan]{ascii_art}[/bold cyan]", justify="center")
-    from rich.rule import Rule
-
+    """Print the startup logo (using the art library)."""
+    ascii_art = text2art("MC on CMD", font="slant")
+    
+    # 强制让 rich 使用 Align.center 居中，并且加上 soft_wrap=True 防止自动折行
+    # 这能确保无论是在 IDE、PowerShell 还是 PyInstaller 打包的 exe 中，
+    # 超宽的 ASCII 字体都不会因为终端宽度计算问题而被挤压变形。
+    centered_art = Align.center(f"[bold cyan]{ascii_art}[/bold cyan]")
+    console.print(centered_art, soft_wrap=True)
+    
     console.print(Rule("[dim]Minecraft CLI Manager[/dim]", style="bright_blue"))
     console.print()
 
