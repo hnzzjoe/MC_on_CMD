@@ -1,6 +1,8 @@
 
 # MC_on_cmd (mc-cli)
 
+[[English](README.md) | [简体中文](README.zh.md)]
+
 A powerful Windows command-line tool for managing Minecraft instances, mods, shaders, resource packs, and saves. It also features a gorgeous interactive terminal (`mc-cli start`) with a retro hacker vibe.
 
 ## 📦 Installation
