@@ -8,6 +8,7 @@ from pathlib import Path
 import typer
 from rich.prompt import Prompt
 
+from mc_cli import __version__
 from mc_cli.commands import diagnostics as diag
 from mc_cli.commands.config import config_app
 from mc_cli.commands.doctor import doctor
@@ -65,7 +66,7 @@ def _global_options(
 @app.command("info")
 def info() -> None:
     """Show tool information."""
-    console.print("MC_on_cmd v0.1.0 — Minecraft CLI Manager")
+    console.print(f"MC_on_cmd v{__version__} — Minecraft CLI Manager")
 
 
 # ================= 交互式终端 =================

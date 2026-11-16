@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mc-cli"
-version = "0.1.0"
+version = "0.1.1"
 description = "A professional CLI manager for Minecraft instances, mods, shaders, and saves."
 authors = [{ name = "bored", email = "boredQAQ@163.com" }]
 readme = "README.md"
@@ -14,7 +14,7 @@ dependencies = [
     "rich>=13.7.0",        # 终端美化、进度条、表格
     "requests>=2.31.0",    # 处理网络请求（调用 API）
     "colorama>=0.4.6",     # Windows 终端颜色兼容
-    "pyfiglet>=0.8.0",     # 启动 Logo 的 ASCII 艺术字
+    "art>=5.0",            # 启动 Logo 的 ASCII 艺术字
 ]
 
 [project.scripts]

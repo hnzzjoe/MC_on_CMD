@@ -15,7 +15,11 @@ venv.bak/
 build/
 dist/
 *.egg-info/
-*.spec
+mc-cli.spec
+
+# ================= 更新信息 ===================
+CHANGELOG.md
+CHANGELOG.zh-CN.md
 
 # ================= 测试与覆盖率 =================
 .pytest_cache/

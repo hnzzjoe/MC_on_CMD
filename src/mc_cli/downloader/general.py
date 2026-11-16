@@ -7,6 +7,7 @@ from pathlib import Path
 
 import requests
 
+from mc_cli import __version__
 from mc_cli.utils.console import (
     get_download_progress,
     log_info,
@@ -14,7 +15,7 @@ from mc_cli.utils.console import (
     log_warn,
 )
 
-USER_AGENT = "mc-cli/0.1.0 (+https://github.com/)"
+USER_AGENT = f"mc-cli/{__version__} (+https://github.com/hnzzjoe/MC_on_CMD)"
 CHUNK_SIZE = 64 * 1024
 
 
