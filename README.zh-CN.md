@@ -9,14 +9,14 @@
 
 ### 方式一：直接下载 (适用于普通玩家)
 
-1. 前往 [Releases](https://github.com/hnzzjoe/MC_on_CMD/releases) 页面下载最新的 `mc-cli.exe`。
-2. 新建一个文件夹（例如 `D:\Tools\MC_CLI`），将下载的 `.exe` 放入其中。
+1. 前往 [Releases](https://github.com/hnzzjoe/MC_on_CMD/releases) 页面下载最新的 `mc-cli_vX.Y.Z.zip`。
+2. 将 zip 解压到一个文件夹（例如 `D:\Tools\MC_CLI`）。压缩包内含 `mc-cli.exe` 及运行所需的运行库文件，请保持它们在同一文件夹内。
 3. **添加到环境变量（强烈推荐）**：
    - 按 `Win` 键搜索“环境变量”。
    - 在“用户变量”中双击 `Path`，点击“新建”，填入刚才的文件夹路径（如 `D:\Tools\MC_CLI`），一路确定保存。
 4. 重启终端（PowerShell/CMD），在任意目录下输入 `mc-cli start` 即可启动！
 
-> **注意：** 如果没有添加到环境变量，需要在 exe 所在目录下使用 `.\mc-cli.exe` 运行。
+> **注意：** 如果没有添加到环境变量，需要在解压后的文件夹内使用 `.\mc-cli.exe` 运行。
 
 ### 方式二：源码安装 (适用于开发者)
 

@@ -7,17 +7,17 @@ A powerful Windows command-line tool for managing Minecraft instances, mods, sha
 
 ## 📦 Installation
 
-### Option 1: For Players (Standalone `.exe`)
+### Option 1: For Players (Standalone Binary)
 
-1. Go to the [Releases](https://github.com/hnzzjoe/MC_on_CMD/releases) page and download the latest `mc-cli.exe`.
-2. Create a folder (e.g., `D:\Tools\MC_CLI`) and put the `.exe` inside.
+1. Go to the [Releases](https://github.com/hnzzjoe/MC_on_CMD/releases) page and download the latest `mc-cli_vX.Y.Z.zip`.
+2. Extract the zip to a folder (e.g., `D:\Tools\MC_CLI`). The archive contains `mc-cli.exe` together with the runtime libraries it needs — keep them all together in the same folder.
 3. **Add to Environment Variables (Highly Recommended)**:
    - Press `Win` and search for "Environment Variables".
    - Edit the `Path` variable under "User variables".
    - Add the folder path (e.g., `D:\Tools\MC_CLI`) and save.
 4. Restart your terminal and type `mc-cli start` anywhere!
 
-> **Note:** If you don't add it to the environment variables, you must run it using `.\mc-cli.exe` in the directory where the file is located.
+> **Note:** If you don't add it to the environment variables, you must run it using `.\mc-cli.exe` from inside the extracted folder.
 
 ### Option 2: For Developers (From Source)
 

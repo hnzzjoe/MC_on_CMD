@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mc-cli"
-version = "0.1.1"
+version = "1.0.3"
 description = "A professional CLI manager for Minecraft instances, mods, shaders, and saves."
 authors = [{ name = "bored", email = "boredQAQ@163.com" }]
 readme = "README.md"

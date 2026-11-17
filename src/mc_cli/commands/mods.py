@@ -91,19 +91,14 @@ def search(
 
     position = chosen - offset
     if 1 <= position <= len(hits):
-        install(hits[position - 1].get("slug", ""))
+        _install_mod(hits[position - 1].get("slug", ""))
     else:
         log_error(f"Index {chosen} is not on this page (use --page to navigate).")
         raise typer.Exit(1)
 
 
-@mod_app.command("install")
-def install(
-    slug: str = typer.Argument(..., help="Modrinth slug or project id"),
-    optional: bool = typer.Option(False, "--optional", help="Also install optional dependencies"),
-    max_depth: int = typer.Option(5, "--max-depth", help="Dependency recursion limit"),
-) -> None:
-    """Install a mod together with its required dependencies."""
+def _install_mod(slug: str, optional: bool = False, max_depth: int = 5) -> None:
+    """Shared install logic (used by both `mod install` and `mod search`)."""
     _, info, mods_dir = require_mods_dir()
     ensure_loader(info)
     try:
@@ -127,6 +122,16 @@ def install(
     log_success(f"Installed {len(downloaded)} file(s) into {mods_dir}")
     for path in downloaded:
         console.print(f"  - {path.name}")
+
+
+@mod_app.command("install")
+def install(
+    slug: str = typer.Argument(..., help="Modrinth slug or project id"),
+    optional: bool = typer.Option(False, "--optional", help="Also install optional dependencies"),
+    max_depth: int = typer.Option(5, "--max-depth", help="Dependency recursion limit"),
+) -> None:
+    """Install a mod together with its required dependencies."""
+    _install_mod(slug, optional=optional, max_depth=max_depth)
 
 
 @mod_app.command("list")

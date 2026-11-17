@@ -16,8 +16,13 @@ build/
 dist/
 *.egg-info/
 mc-cli.spec
+main.build
+main.dist
+icon.ico
 
 # ================= 更新信息 ===================
+releases
+ALL_CHANGELOG.md
 CHANGELOG.md
 CHANGELOG.zh-CN.md
 
